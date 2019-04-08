@@ -1,0 +1,92 @@
+/*
+Aligns headers at center of pages and also underlines headers
+ */
+header{
+    text-align: center;
+    text-decoration: underline;
+}
+
+/*
+Aligns footers at center of pages
+ */
+footer {
+    text-align: center;
+}
+
+/*
+Aligns forms to end of page
+ */
+.form{
+text-align: end;
+}
+
+/*
+Gives background color of whitesmoke on all pages
+ */
+main{
+    background-color: whitesmoke;
+}
+
+/*
+Sets text in article to color #00031e
+ */
+article{
+    color: #00031e;
+}
+
+/*
+creates a price box which is moved down relative position by 10 px and has a width of 311px with background color #6c757d and border radius of 10px
+ */
+.price{
+    position: relative;
+    top: 10px;
+    width: 311px;
+    background-color: #6c757d;
+    border-radius: 10px;
+}
+
+/*
+Use of validation and representation with CSS styled user feedback
+ */
+input:invalid {
+    border: 2px solid #bababa;
+}
+
+input:valid {
+    border: 2px solid green;
+}
+
+input[type=email]{
+    -webkit-appearance: none;
+
+    width: 30%;
+    border: 1px solid #333;
+    margin: 0;
+
+    font-family: inherit;
+    font-size: 0.9rem;
+}
+
+/* This is the style for the invalid fields */
+form input:invalid{
+    border-color: #900;
+    background-color: #FDD;
+}
+
+form input:focus:invalid {
+    outline: none;
+}
+
+/* This is the style of our error messages */
+.error {
+    width  : 30%;
+    padding: 0;
+    font-size: 0.9rem;
+    color: white;
+    background-color: #900;
+    border-radius: 0 0 5px 5px;
+}
+
+.error.active {
+    padding: 0.3em;
+}

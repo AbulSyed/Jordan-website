@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../static/css/style.css" th:href="@{/css/style.css}"/>
+    <script src="../static/js/main.js" th:src="@{/js/main.js}"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Register</title>
+
+</head>
+
+<body>
+<main>
+
+    <!--Navigation bar made using bootstrap4-->
+    <nav class="navbar sticky-top navbar-expand-lg  navbar-light bg-light">
+        <a class="navbar-brand"><img src="../static/images/logo.jpg" th:src="@{/images/logo.jpg}" width="50" class="rounded-circle" alt="Logo"></a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNavbar">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html" title="HomePage" th:href="@{/}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="product.html" th:href="@{/product}">Product</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="forum.html" th:href="@{/forum}">Forum</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-toggle="dropdown">
+                        Sign In/Up
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="signin.html" th:href="@{/signin}">Sign In</a>
+                        <a class="dropdown-item" href="register.html" th:href="@{/register}">Register</a>
+                        <a class="dropdown-item" href="profile.html" th:href="@{/profile}">Profile</a>
+                        <a class="dropdown-item" href="users.html" th:href="@{/users}">Users</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+<header>
+    <h1>Register</h1>
+</header>
+
+    <!--Registration section contains First/Last name, Gender, DOB, Email & Password-->
+    <section class="row justify-content-center">
+            <form action="/register" method="post" th:object="${jordanUser}">
+                <fieldset>
+                    <legend>User Information</legend>
+                    <table>
+                        <tr>
+                            <td><label>First Name:</label></td>
+                            <td><input type="text" pattern="[A-Za-z]*"
+                                       title="Your name must contain only letters."
+                                       th:field="*{firstName}"/></td>
+                        </tr>
+                        <tr>
+                            <td><label>Last Name:</label></td>
+                            <td><input type="text" pattern="[A-Za-z]*"
+                                       title="Your name must contain only letters."
+                                       th:field="*{lastName}"/></td>
+                        </tr>
+                        <tr>
+                            <td><label>Gender:</label></td>
+                            <td>Male:<input type="radio" th:field="*{gender}" name="gender" value="Male"/>
+                                Female:<input type="radio" name="gender" value="Female"/></td>
+                        </tr>
+                        <tr>
+                            <td><label>DOB:</label></td>
+                            <td>
+                                <select name="Day" th:field="*{dob}" >
+                                    <option value="1">1</option> <option value="2">2</option> <option value="3">3</option>
+                                    <option value="4">4</option> <option value="5">5</option> <option value="6">6</option>
+                                    <option value="7">7</option> <option value="8">8</option> <option value="9">9</option>
+                                    <option value="10">10</option> <option value="11">11</option> <option value="12">12</option>
+                                    <option value="13">13</option> <option value="14">14</option> <option value="15">15</option>
+                                    <option value="16">16</option> <option value="17">17</option> <option value="18">18</option>
+                                    <option value="19">19</option> <option value="20">20</option> <option value="21">21</option>
+                                    <option value="22">22</option> <option value="23">23</option> <option value="24">24</option>
+                                    <option value="25">25</option> <option value="26">26</option> <option value="27">27</option>
+                                    <option value="28">28</option> <option value="29">29</option> <option value="30">30</option>
+                                    <option value="31">31</option>
+
+                                </select>
+                                <select name="Month" th:field="*{dob}">
+                                    <option value="January">January</option>
+                                    <option value="February">February</option>
+                                    <option value="March">March</option>
+                                    <option value="April">April</option>
+                                    <option value="May">May</option>
+                                    <option value="June">June</option>
+                                    <option value="July">July</option>
+                                    <option value="August">August</option>
+                                    <option value="September">September</option>
+                                    <option value="October">October</option>
+                                    <option value="November">November</option>
+                                    <option value="December">December</option>
+                                </select>
+
+                                <select name="Year" th:field="*{dob}">
+                                    <option value="1990">1990</option>
+                                    <option value="1991">1991</option>
+                                    <option value="1992">1992</option>
+                                    <option value="1993">1993</option>
+                                    <option value="1994">1994</option>
+                                    <option value="1995">1995</option>
+                                    <option value="1996">1996</option>
+                                    <option value="1997">1997</option>
+                                    <option value="1998">1998</option>
+                                    <option value="1999">1999</option>
+                                    <option value="2000">2000</option>
+                                </select></td>
+                        </tr>
+                        <tr>
+                            <td><label>Email:</label></td>
+                            <td><input type="text" th:field="*{email}"/></td>
+                        </tr>
+                        <tr>
+                            <td><label>Password:</label></td>
+                            <td><input type="password" minlength="3" th:field="*{password}"/></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><input type="submit" value="register"/></td>
+                        </tr>
+                    </table>
+                </fieldset>
+            </form>
+    </section>
+
+
+<footer>
+    &copy; A. Syed
+</footer>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="../static/js/main.js" th:src="@{/js/main.js}"></script>
+</main>
+</body>
+</html>
